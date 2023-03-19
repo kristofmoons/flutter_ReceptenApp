@@ -1,0 +1,25 @@
+Je app bevat zowel stateless als stateful widgets.
+Je app bevat minimaal één video- en één geluidsbestand.
+Je app bevat afbeeldingen.
+Je app bevat minimaal één scrolbare lijst van gelijkvormige elementen.
+Je app maakt op minimaal één plaats gebruik van dynamische navigatie.
+Je app bevat minimaal één dialoogvenster (bvb. om de gebruiker te informeren over een bepaalde uitgevoerde actie, om de gebruiker een beperkte keuze in het uitvoeren van een taak aan te bieden,...).
+Je app bevat een of meerdere invoerschermen waar minimaal gebruik gemaakt wordt van tekstinvoer, een keuze-invoer (radio-buttons en/of switches of checkboxes), en een dropdownmenu.
+Je app maakt op minimaal één plaats gebruik van animatie.
+Je app maakt gebruik van een bibliotheekbestand om gemeenschappelijke informatie op te halen en weg te schrijven; optioneel kan je app hiervoor ook gebruik maken van een inherited widget, indien toepasselijk.
+Je app maakt gebruik van gegevens uit een online bron; dat kan een externe website zijn, een externe databank of een andere externe bron.
+Je app ziet er goed uit.
+
+Bovenstaande is het minimale. Je krijgt extra punten indien:
+
+Je gebruik maakt van streams, shared preferences of lokale storage. Als je gebruik maakt van lokale storage: vergeet dan niet de exacte richtlijnen toe te voegen die ik nodig heb om jouw app te gebruiken.
+Je gebruik maakt van een FutureBuilderLinks to an external site. of een StreamBuilderLinks to an external site..
+Indien je gebruik maakt van widgets en/of technieken die we niet in de lessen besproken hebben.
+Indien je gebruik maakt van externe packages die we niet in de lessen gebruikten.
+Naargelang de grootte, nut en professionaliteit van je app.
+
+DONE
+
+Je app bevat minimaal 4 verschillende' pagina's (routes).
+Je app bevat een gemeenschappelijke menubalk.
+
