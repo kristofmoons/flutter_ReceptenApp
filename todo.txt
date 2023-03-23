@@ -1,11 +1,9 @@
 Je app bevat minimaal één video- en één geluidsbestand.
-Je app bevat afbeeldingen.
-Je app bevat minimaal één scrolbare lijst van gelijkvormige elementen.
-Je app maakt op minimaal één plaats gebruik van dynamische navigatie.
 Je app bevat minimaal één dialoogvenster (bvb. om de gebruiker te informeren over een bepaalde uitgevoerde actie, om de gebruiker een beperkte keuze in het uitvoeren van een taak aan te bieden,...).
 Je app bevat een of meerdere invoerschermen waar minimaal gebruik gemaakt wordt van tekstinvoer, een keuze-invoer (radio-buttons en/of switches of checkboxes), en een dropdownmenu.
 Je app maakt op minimaal één plaats gebruik van animatie.
-Je app maakt gebruik van een bibliotheekbestand om gemeenschappelijke informatie op te halen en weg te schrijven; optioneel kan je app hiervoor ook gebruik maken van een inherited widget, indien toepasselijk.
+Je app maakt gebruik van een bibliotheekbestand om gemeenschappelijke informatie op te halen en weg te schrijven;
+ optioneel kan je app hiervoor ook gebruik maken van een inherited widget, indien toepasselijk.
 Je app ziet er goed uit.
 
 Bovenstaande is het minimale. Je krijgt extra punten indien:
@@ -22,5 +20,10 @@ Je app bevat minimaal 4 verschillende' pagina's (routes).
 Je app bevat een gemeenschappelijke menubalk.
 Je app bevat zowel stateless als stateful widgets.
 Je app maakt gebruik van gegevens uit een online bron; dat kan een externe website zijn, een externe databank of een andere externe bron.
+Je app bevat afbeeldingen.
+Je app bevat minimaal één scrolbare lijst van gelijkvormige elementen.
+Je app maakt op minimaal één plaats gebruik van dynamische navigatie.
+
+
 
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/screen1.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_project/screen2.dart';
 
 void main() {
   runApp(AppRoot());
@@ -95,12 +96,6 @@ class AppTree extends StatelessWidget {
             ),
           ],
         ));
-  }
-}
-
-class Scherm2 extends StatelessWidget {
-  Widget build(BuildContext context) {
-    return Container(color: Colors.blue);
   }
 }
 
