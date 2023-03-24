@@ -1,58 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'data.dart' as lib;
 
 class Scherm1 extends StatelessWidget {
   const Scherm1({super.key});
 
   Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.vertical,
-      children: [
-        Container(
-            padding: EdgeInsets.all(2),
-            height: 110,
-            child: Card(
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                  Image.asset("assets/tiramisu.jpg"),
-                  Expanded(
-                      child: Container(
-                          padding: EdgeInsets.all(5),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Text('tiramisu',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
-                              Text('30 min'),
-                            ],
-                          ))),
-                  FirstRoute(),
-                ]))),
-        Container(
-            padding: EdgeInsets.all(2),
-            height: 110,
-            child: Card(
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                  Image.asset("assets/tiramisu.jpg"),
-                  Expanded(
-                      child: Container(
-                          padding: EdgeInsets.all(5),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Text('tiramisu',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
-                              Text('30 min'),
-                            ],
-                          )))
-                ]))),
-      ],
-    );
+    return Column(children: <Widget>[
+      Column(
+        children: lib.recipes.map((recipe) {
+          return Container(
+              padding: EdgeInsets.all(2),
+              height: 110,
+              child: Card(
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                    Image(
+                      image: AssetImage("${recipe.image}"),
+                      fit: BoxFit.cover,
+                      width: 180,
+                    ),
+                    Expanded(
+                        child: Container(
+                            padding: EdgeInsets.all(5),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Text('${recipe.name}',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Text('${recipe.categoryType.name}'),
+                              ],
+                            ))),
+                    FirstRoute(),
+                  ])));
+        }).toList(),
+      )
+    ]);
   }
 }
 
