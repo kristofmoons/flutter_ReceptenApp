@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 enum CategoryType { itallian, dessert, asian }
 
-class recipe {
+class Recipe {
   String name;
   String image;
   String guide;
   CategoryType categoryType;
 
-  recipe({
+  Recipe({
     required this.name,
     required this.image,
     required this.categoryType,
@@ -21,9 +21,17 @@ class recipe {
   }
 }
 
-recipe tiramisu = recipe(
-  name: 'dog 1',
-  image: 'assets/images/dog1.jpg',
-  guide: 'Shepherd',
-  categoryType: CategoryType.dessert,
-);
+List<Recipe> recipes = [
+  Recipe(
+    name: 'tiramisu',
+    image: 'assets/images/tiramisu.jpg',
+    guide: 'Shepherd',
+    categoryType: CategoryType.dessert,
+  ),
+  Recipe(
+    name: 'spaghetti',
+    image: 'assets/images/Spaghetti.jpg',
+    guide: 'Shepherd',
+    categoryType: CategoryType.itallian,
+  ),
+];

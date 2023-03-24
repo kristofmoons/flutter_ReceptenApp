@@ -21,6 +21,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/tiramisu.jpg
-    - assets/video/tiramisu.mp4
+    - assets/images/
+    - assets/video/
 
