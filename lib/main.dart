@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/screen1.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_project/screen2.dart';
+import 'package:lottie/lottie.dart';
 
 void main() {
   runApp(AppRoot());
@@ -82,18 +83,20 @@ class AppTree extends StatelessWidget {
               errorWidget: (context, url, error) => Icon(Icons.error),
             ),
             Padding(
-              padding:
-                  const EdgeInsets.all(30), //apply padding to all four sides
-              child: Text(
-                "taste trail\nFlexibiliteit op z'n lekkerst",
-                style: TextStyle(
-                    color: Colors.white.withOpacity(1),
-                    fontSize: 38.0,
-                    height: 1.4,
-                    fontWeight: FontWeight.w600),
-                textAlign: TextAlign.center,
-              ),
-            ),
+                padding:
+                    const EdgeInsets.all(30), //apply padding to all four sides
+                child: Column(children: [
+                  Text(
+                    "taste trail\nFlexibiliteit op z'n lekkerst",
+                    style: TextStyle(
+                        color: Colors.black.withOpacity(1),
+                        fontSize: 38.0,
+                        height: 1.4,
+                        fontWeight: FontWeight.w600),
+                    textAlign: TextAlign.center,
+                  ),
+                  Lottie.asset('assets/cooking.json'),
+                ])),
           ],
         ));
   }

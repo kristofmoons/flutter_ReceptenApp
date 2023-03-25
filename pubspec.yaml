@@ -7,6 +7,7 @@ environment:
   sdk: '>=2.19.2 <3.0.0'
 
 dependencies:
+  lottie: ^2.3.0
   audioplayers: ^3.0.1
   video_player: ^2.5.1
   cached_network_image: ^3.2.3
@@ -23,4 +24,5 @@ flutter:
   assets:
     - assets/images/
     - assets/video/
+    - assets/cooking.json
 
