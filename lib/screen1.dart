@@ -21,7 +21,8 @@ class _Scherm1State extends State<Scherm1> {
     opties.add(DropdownMenuItem(child: Text('dessert'), value: "dessert"));
     opties.add(DropdownMenuItem(child: Text('asian'), value: "asian"));
 
-    return Column(children: <Widget>[
+    return SingleChildScrollView(
+        child: Column(children: <Widget>[
       Container(
           margin: const EdgeInsets.all(10),
           decoration: BoxDecoration(
@@ -141,7 +142,7 @@ class _Scherm1State extends State<Scherm1> {
                         ])));
               }).toList(),
       )
-    ]);
+    ]));
   }
 }
 

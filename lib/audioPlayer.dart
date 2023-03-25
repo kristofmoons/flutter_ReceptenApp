@@ -13,6 +13,12 @@ class Mp3Player extends StatefulWidget {
 class _Mp3PlayerState extends State<Mp3Player> {
   final AudioPlayer audioSpeler = AudioPlayer();
 
+  @override
+  void dispose() {
+    audioSpeler.stop();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
       Padding(padding: EdgeInsets.only(left: 5)),
