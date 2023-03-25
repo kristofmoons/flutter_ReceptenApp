@@ -2,55 +2,140 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/videoPlayer.dart';
 import 'data.dart' as lib;
 
-class Scherm1 extends StatelessWidget {
+class Scherm1 extends StatefulWidget {
   const Scherm1({super.key});
 
+  @override
+  State<Scherm1> createState() => _Scherm1State();
+}
+
+class _Scherm1State extends State<Scherm1> {
+  String keuze = 'All';
+
+  @override
   Widget build(BuildContext context) {
+    List<DropdownMenuItem<String>> opties = <DropdownMenuItem<String>>[];
+    opties.add(DropdownMenuItem(child: Text('All'), value: "All"));
+    opties.add(DropdownMenuItem(child: Text('itallian'), value: "itallian"));
+    opties.add(DropdownMenuItem(child: Text('dessert'), value: "dessert"));
+    opties.add(DropdownMenuItem(child: Text('asian'), value: "asian"));
+
     return Column(children: <Widget>[
+      Container(
+          margin: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: Colors.black38, width: 3), //border of dropdown button
+            borderRadius:
+                BorderRadius.circular(50), //border raiuds of dropdown button
+          ),
+          child: Padding(
+            padding: EdgeInsets.only(left: 30, right: 30),
+            child: DropdownButton(
+              items: opties,
+              isExpanded: true,
+              value: keuze,
+              underline: Container(),
+              style: const TextStyle(fontSize: 18),
+              onChanged: (value) {
+                setState(() {
+                  keuze = value!;
+                });
+              },
+            ),
+          )),
       Column(
-        children: lib.recipes.map((recipe) {
-          return Container(
-              padding: EdgeInsets.all(2),
-              height: 110,
-              child: Card(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                    Image(
-                      image: AssetImage("${recipe.image}"),
-                      fit: BoxFit.cover,
-                      width: 180,
-                    ),
-                    Expanded(
-                        child: Container(
-                            padding: EdgeInsets.all(5),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Text('${recipe.name}',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                                Text('${recipe.categoryType.name}'),
-                              ],
-                            ))),
-                    Center(
-                      child: IconButton(
-                        icon: const Icon(Icons.arrow_forward_ios),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SecondRoute(
-                                    name: '${recipe.name}',
-                                    img: '${recipe.image}',
-                                    guide: '${recipe.guide}',
-                                    video: '${recipe.video}')),
-                          );
-                        },
-                      ),
-                    ),
-                  ])));
-        }).toList(),
+        children: keuze == 'All'
+            ? lib.recipes.map((recipe) {
+                return Container(
+                    padding: EdgeInsets.all(2),
+                    height: 110,
+                    child: Card(
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                          Image(
+                            image: AssetImage("${recipe.image}"),
+                            fit: BoxFit.cover,
+                            width: 180,
+                          ),
+                          Expanded(
+                              child: Container(
+                                  padding: EdgeInsets.all(5),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Text('${recipe.name}',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold)),
+                                      Text('${recipe.categoryType.name}'),
+                                    ],
+                                  ))),
+                          Center(
+                            child: IconButton(
+                              icon: const Icon(Icons.arrow_forward_ios),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SecondRoute(
+                                          name: '${recipe.name}',
+                                          img: '${recipe.image}',
+                                          guide: '${recipe.guide}',
+                                          video: '${recipe.video}')),
+                                );
+                              },
+                            ),
+                          ),
+                        ])));
+              }).toList()
+            : lib.recipes
+                .where((recipe) => recipe.categoryType.name == keuze)
+                .map((recipe) {
+                return Container(
+                    padding: EdgeInsets.all(2),
+                    height: 110,
+                    child: Card(
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                          Image(
+                            image: AssetImage("${recipe.image}"),
+                            fit: BoxFit.cover,
+                            width: 180,
+                          ),
+                          Expanded(
+                              child: Container(
+                                  padding: EdgeInsets.all(5),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Text('${recipe.name}',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold)),
+                                      Text('${recipe.categoryType.name}'),
+                                    ],
+                                  ))),
+                          Center(
+                            child: IconButton(
+                              icon: const Icon(Icons.arrow_forward_ios),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SecondRoute(
+                                          name: '${recipe.name}',
+                                          img: '${recipe.image}',
+                                          guide: '${recipe.guide}',
+                                          video: '${recipe.video}')),
+                                );
+                              },
+                            ),
+                          ),
+                        ])));
+              }).toList(),
       )
     ]);
   }
@@ -92,9 +177,7 @@ class _SecondRouteState extends State<SecondRoute> {
           Column(children: [
             widget.video != 'none'
                 ? CheckboxListTile(
-                    //checkbox positioned at right
                     value: videoOrPhoto,
-
                     onChanged: (bool? value) {
                       setState(() {
                         videoOrPhoto = value;
