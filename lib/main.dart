@@ -83,8 +83,7 @@ class AppTree extends StatelessWidget {
               errorWidget: (context, url, error) => Icon(Icons.error),
             ),
             Padding(
-                padding:
-                    const EdgeInsets.all(30), //apply padding to all four sides
+                padding: const EdgeInsets.all(30),
                 child: Column(children: [
                   Text(
                     "taste trail\nFlexibiliteit op z'n lekkerst",

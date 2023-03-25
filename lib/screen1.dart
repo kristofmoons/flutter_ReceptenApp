@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/audioPlayer.dart';
 import 'package:flutter_project/videoPlayer.dart';
 import 'data.dart' as lib;
 
@@ -83,7 +84,8 @@ class _Scherm1State extends State<Scherm1> {
                                           name: '${recipe.name}',
                                           img: '${recipe.image}',
                                           guide: '${recipe.guide}',
-                                          video: '${recipe.video}')),
+                                          video: '${recipe.video}',
+                                          audio: '${recipe.audio}')),
                                 );
                               },
                             ),
@@ -126,10 +128,12 @@ class _Scherm1State extends State<Scherm1> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => SecondRoute(
-                                          name: '${recipe.name}',
-                                          img: '${recipe.image}',
-                                          guide: '${recipe.guide}',
-                                          video: '${recipe.video}')),
+                                            name: '${recipe.name}',
+                                            img: '${recipe.image}',
+                                            guide: '${recipe.guide}',
+                                            video: '${recipe.video}',
+                                            audio: '${recipe.audio}',
+                                          )),
                                 );
                               },
                             ),
@@ -146,13 +150,15 @@ class SecondRoute extends StatefulWidget {
   late String img;
   late String guide;
   late String video;
+  late String audio;
 
   SecondRoute(
       {Key? key,
       required this.name,
       required this.img,
       required this.guide,
-      required this.video})
+      required this.video,
+      required this.audio})
       : super(key: key);
 
   @override
@@ -161,6 +167,7 @@ class SecondRoute extends StatefulWidget {
 
 class _SecondRouteState extends State<SecondRoute> {
   bool? videoOrPhoto = false;
+  bool? wantsAudio = false;
 
   @override
   Widget build(BuildContext context) {
@@ -174,6 +181,7 @@ class _SecondRouteState extends State<SecondRoute> {
                 ? Image.asset(widget.img)
                 : Mp4Player(video: widget.video),
           ),
+          if (wantsAudio == true) Mp3Player(audio: widget.audio),
           Column(children: [
             widget.video != 'none'
                 ? CheckboxListTile(
@@ -186,6 +194,17 @@ class _SecondRouteState extends State<SecondRoute> {
                     title: Text("Do you want to play the video?"),
                   )
                 : Text('No video available for this recipe.'),
+            widget.audio != 'none'
+                ? CheckboxListTile(
+                    value: wantsAudio,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        wantsAudio = value;
+                      });
+                    },
+                    title: Text("Do you want to play audio?"),
+                  )
+                : Text('No audio available for this recipe.'),
             Container(
               child: Align(
                 alignment: Alignment.center,

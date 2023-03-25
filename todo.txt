@@ -8,7 +8,6 @@ Bovenstaande is het minimale. Je krijgt extra punten indien:
 Je gebruik maakt van streams, shared preferences of lokale storage. Als je gebruik maakt van lokale storage: vergeet dan niet de exacte richtlijnen toe te voegen die ik nodig heb om jouw app te gebruiken.
 Je gebruik maakt van een FutureBuilderLinks to an external site. of een StreamBuilderLinks to an external site..
 Indien je gebruik maakt van widgets en/of technieken die we niet in de lessen besproken hebben.
-Indien je gebruik maakt van externe packages die we niet in de lessen gebruikten.
 Naargelang de grootte, nut en professionaliteit van je app.
 
 DONE
@@ -21,6 +20,9 @@ Je app bevat afbeeldingen.
 Je app bevat minimaal één scrolbare lijst van gelijkvormige elementen.
 Je app maakt op minimaal één plaats gebruik van dynamische navigatie.
 Je app maakt op minimaal één plaats gebruik van animatie.
+
+Indien je gebruik maakt van externe packages die we niet in de lessen gebruikten.
+
 
 Je app ziet er goed uit.
 
