@@ -210,18 +210,42 @@ class _SecondRouteState extends State<SecondRoute> {
           Expanded(child: Image.network(widget.img)),
           Column(
             children: [
-              Container(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    widget.guide,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
+              Padding(
+                padding: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
+                child: Column(
+                  children: [
+                    const Center(
+                      child: Text(
+                        'Guide',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
+                    SizedBox(height: 16.0),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            widget.guide,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
+              )
             ],
           ),
         ],

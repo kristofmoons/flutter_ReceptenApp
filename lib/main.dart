@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/screen1.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_project/screen2.dart';
+import 'package:flutter_project/screen3.dart';
 import 'package:lottie/lottie.dart';
 
 void main() {
@@ -98,11 +99,5 @@ class AppTree extends StatelessWidget {
                 ])),
           ],
         ));
-  }
-}
-
-class Scherm3 extends StatelessWidget {
-  Widget build(BuildContext context) {
-    return Container(color: Colors.blue);
   }
 }

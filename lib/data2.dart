@@ -83,3 +83,11 @@ void addRecipe(
   );
   recipes.add(newRecipe);
 }
+
+void deleteRecipe(String recipeName) {
+  recipes.removeWhere((recipe) => recipe.name == recipeName);
+}
+
+void deleteAllRecipes() {
+  recipes.clear();
+}

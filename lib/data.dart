@@ -83,4 +83,36 @@ Giet de noedels af en laat goed uitlekken. Doe ze mee in de wok en meng goed. Wa
       categoryType: CategoryType.asian,
       video: 'none',
       audio: 'none'),
+  Recipe(
+      name: 'sandwich',
+      image: 'assets/images/sandwich.jpg',
+      guide:
+          ''' Grill of bak de filet in olijfolie zoals beschreven op de verpakking.
+
+Breng op smaak met peper en zout.
+
+Snipper de tomaatjes fijn en roer ze door de kaas.
+
+Voeg peper en zout naar smaak toe.
+
+Snij het broodje in 2 in de lengte.
+
+Smeer er de verse kaas op en verdeel er de sla over.
+
+Snij de filet in plakjes en schik ze op het brood.''',
+      categoryType: CategoryType.asian,
+      video: 'assets/video/sandwich.mp4',
+      audio: 'none'),
+  Recipe(
+      name: 'pizza',
+      image: 'assets/images/pizza.jpg',
+      guide:
+          '''Verwarm de oven voor op 250°C en bekleed 2 bakplaten met bakpapier of bestrijk ze met olijfolie. Rol het pizzadeeg uit en snij hier 4 bodems van ongeveer 25cm diameter uit. Leg de pizzabodems op de bakplaten. 
+
+Bestrijk de bodems royaal met tomatensaus en strooi hierna geraspte kaas en basilicumblaadje over de pizza. Kruid af met peper en zout en besprenkel met olijfolie.
+
+Bak de pizza’s ongeveer 25 minuten in het midden van de oven. Snij de pizza in stukken met een pizzaroller en serveer.  ''',
+      categoryType: CategoryType.itallian,
+      video: 'none',
+      audio: 'none'),
 ];

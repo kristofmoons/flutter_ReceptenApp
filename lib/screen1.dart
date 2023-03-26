@@ -178,9 +178,14 @@ class _SecondRouteState extends State<SecondRoute> {
         ),
         body: ListView(scrollDirection: Axis.vertical, children: [
           Expanded(
-            child: videoOrPhoto == false
-                ? Image.asset(widget.img)
-                : Mp4Player(video: widget.video),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                maxHeight: 360,
+              ),
+              child: videoOrPhoto == false
+                  ? Image.asset(widget.img)
+                  : Mp4Player(video: widget.video),
+            ),
           ),
           if (wantsAudio == true) Mp3Player(audio: widget.audio),
           Column(children: [
@@ -194,7 +199,22 @@ class _SecondRouteState extends State<SecondRoute> {
                     },
                     title: Text("Do you want to play the video?"),
                   )
-                : Text('No video available for this recipe.'),
+                : Container(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                    child: Text(
+                      'No video available for this recipe.',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                  ),
             widget.audio != 'none'
                 ? CheckboxListTile(
                     value: wantsAudio,
@@ -205,19 +225,51 @@ class _SecondRouteState extends State<SecondRoute> {
                     },
                     title: Text("Do you want to play audio?"),
                   )
-                : Text('No audio available for this recipe.'),
-            Container(
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  widget.guide,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
+                : Container(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      'No audio available for this recipe.',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
                   ),
-                ),
+            Padding(
+              padding: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
+              child: Column(
+                children: [
+                  Center(
+                    child: Text(
+                      'Guide',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16.0),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          widget.guide,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
+            )
           ]),
         ]));
   }
