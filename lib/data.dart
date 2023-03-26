@@ -67,4 +67,20 @@ Dien de pasta op met de saus en werk af met geraspte kaas.''',
     video: 'none',
     audio: 'none',
   ),
+  Recipe(
+      name: 'noedels',
+      image: 'assets/images/noodles.jpg',
+      guide:
+          '''Kook de noedels volgens de aanwijzingen op de verpakking. Giet af en bewaar ze in een kom met koud water.
+
+        Maak de groenten schoon. Snipper de ui en de knofloog. Snij de Chinese kool in sliertjes. Snij de lente-uien in ringen. Pel de scampi’s tot het staartje en maak ze schoon.
+        
+        
+Verhit wat zonnebloemolie met enkele druppels sesamolie in een wok. Roerbak de knoflook, de gember en de ui 2 tot 3 minuten op middelhoog vuur. Voeg de scampi’s toe en roerbak tot ze roze kleuren. Kruid met peper. Voeg de kool en de sojascheuten toe, roerbak nog 1 minuutje mee.
+
+       
+Giet de noedels af en laat goed uitlekken. Doe ze mee in de wok en meng goed. Warm nog even door. Breng op smaak met de sojasaus, het limoensap en peper. Bestrooi met de lente-uitjes en roer nog even om. Werk af met koriander en sesamzaadjes. ''',
+      categoryType: CategoryType.asian,
+      video: 'none',
+      audio: 'none'),
 ];

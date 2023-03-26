@@ -49,8 +49,7 @@ List<Recipe> recipes = [
   ),
   Recipe(
     name: 'spaghetti',
-    image:
-        'https://image.15gram.be/uploads/recipes/4618_1661343671-1920x1280.jpg',
+    image: 'https://i.imgur.com/4Hu5HB9.jpeg',
     guide: '''Snipper de ui en knoflook fijn.
 
 Was en snijd de paprika’s in blokjes. Rasp de wortels en snijd ze ook in fijne stukjes.

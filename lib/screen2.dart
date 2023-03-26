@@ -55,7 +55,7 @@ class _Scherm2State extends State<Scherm2> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                 Image(
-                  image: AssetImage("images/tiramisu.jpg"),
+                  image: AssetImage("images/placeholder.jpg"),
                   fit: BoxFit.cover,
                   width: 180,
                 ),
